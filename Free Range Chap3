@@ -1,0 +1,170 @@
+------------------------------------------------
+---------------Free Range page 18  -------------
+----------------- listing 3.1  -----------------
+----------the entity declaration in VHDL -------
+------------------------------------------------
+
+-- my_entity declaration
+
+entity my_entity is
+	port(
+		 port_name_1 : in       std_logic; 
+		 port_name_2 : out      std_logic; 
+		 port_name_3 : inout    std_logic; 
+		);  --do not forget the semicolon
+end my_entity;  -- do not forget this semicolon
+
+
+
+
+
+--------------------------------------------------
+---------------Free Range page 22  ---------------
+----------------- listing 3.4  -------------------
+--Typical inclusions of IEEE standard libraries---
+--------------------------------------------------
+
+-- library declaration
+library IEEE;
+use IEEE.std_logic_1164.all;   --basic IEEE library, makes available std_logic_vector
+use IEEE.numeric_std.all;      --IEEE library for the unsigned type
+                               --and various unsigned operators
+--entity
+entity my_ent is
+  port(
+		A, B, C : in std_logic;     --signals entering the entity of type std_logic
+		F       : out std_logic
+	   );   --signals leaving entity
+end my_ent;
+  
+--architecture
+architecture my_arch of my_ent is
+  signal v1, v2 : std_logic_vector  (3 downto 0);  --signal object type is software representation of a wire
+  signal u1     : unsigned  (3 downto 0);          --a group of signals that differ in name by only a numeric characther  
+  signal i1     : integer;                         --variable object type, like in C or Java, is used to store local information
+    
+begin
+  u1  <=  "1101";
+  i1  <=  13;
+  v1  <=  std_logic_vector(u1);                         -- = "1101"
+  v2  <=  std_logic_vector(to_unsigned(i1, v2'length)); -- = "1101"
+  F <=  NOT (A AND B AND C);
+end my_arch;
+
+
+
+--------------------------------------------------
+---------------Free Range page 24  ---------------
+--Listing 3.5: Example of a simple VHDL block.---
+--------------------------------------------------
+
+
+--library declaration
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+--entity
+entity circuit1 is
+	port( A, B, C : in std_logic;
+		    F, G  : out std_logic
+		);
+end circuit1;
+	
+--architecture
+architecture circuit1_arc of circuit1 is	
+	signal sig_1	:	std_logic;			--signal declaration mandatory. before keyword "begin" 
+begin	
+	process (a, b, c)
+		variable var_1	:	integer;		--variables must be defined inside the process construct and are local 
+	begin
+		F	    <=	not(A and B and C);	    --use operator "<=" to assign new value to object of type signal
+		sig_1	<=	A;						--another signal assignment 
+		var_1	:= 34;		  	         	--use operator ":=" to assign new value to object of type variable
+	end process;
+	
+	G	<= not (A and B);					--concurrent assignment
+end circuit1_arc;
+
+
+----------------------------------------------------
+-----------Intro to Digital Design, Haskell---------
+--------------------Listing 1.3: -------------------
+--Connecting the eight switches to the eight LEDs.--
+----------------------------------------------------
+
+--library declaration
+library.IEEE;
+use IEEE.std_logic_1164.all;
+
+--entity
+entity	sw_to_led is
+	port(
+		sw	: in	std_logic_vector(7 downto 0);
+		ld	: out  std_logic_vector(7 downto 0)
+		);
+end sw_to_led;
+	
+--architecture
+architecture sw_to_led_arc of sw_to_led is
+	begin
+		ld <=	sw;		-- assign the signal value of switch to led	
+end sw_to_led_arc;
+
+
+--------------------------------------------------
+---------------Free Range page 26  ---------------
+----------------- 3.6 Exercises-------------------
+--------------------------------------------------
+
+
+
+
+-- 1. What is referred to by the word bundle?
+-- a collection of signals that differ in name by a numeric charachter only
+
+-- 2. What is a common method of representing bundles in black-box
+-- diagrams?
+-- one horizontal line, with a slanted line crossing it. a number above the slanted line to represent how many signals are in the bundle
+
+-- 3. Why is it considered a good approach to always draw a black-box
+-- diagram when using VHDL to model digital circuits?
+-- so that all ingoing and outgoign signals are represented in the code.
+
+-- 4. Write VHDL entity declarations that describe the following black-box
+-- diagrams:
+
+-- (a.) 
+
+--library declaration
+library.IEEE;
+use IEEE.std_logic_1164.all;
+
+--entity
+entity sws1 is 
+	port( 
+		a_in1, b_in2	: in std_logic;
+		clk     	    : in std_logic;
+		ctrl_int     	: in std_logic;
+		out_b		    : out std_logic;
+		);
+end sys1;
+
+-- (b.) 
+
+--library declaration
+library.IEEE;
+use IEEE.std_logic_1164.all;
+
+--entity
+entity sys2 is	
+	port(
+		input_w			:in std_logic;
+		a_data			:in std_logic_vector(7 downto 0);
+		b_data			:in std_logic_vector(7 downto 0);	
+		clk 			:in std_logic;
+		dat_4			:out std_logic_vector(7 downto 0);
+		dat_5			:out std_logic_vector(2 downto 0);
+		);
+		
+end sys2;
+
