@@ -1,0 +1,24 @@
+-- an example of case insensitivity of VHDL
+Dout <= A and B; 
+doUt <= a AnD b;
+
+--VHDL is indifferent to white space
+nQ <= In_a or In_b;
+nQ <=in_a OR in_b;
+
+-- first section. this is to demonstrate comments
+-- closest thing to block comments
+PS_reg <= NS_reg;   -- assign next_state value to present_state
+-- research has shown that using lots of appropiate comments is a sign of high intelligence
+
+-- parantheses.
+-- both statements have the same meaning
+if x = '0' and y = '0' or z = '1' then
+blah;  -- some useful statement       
+blah;  -- some useful statement  
+end if;
+
+if ( ((x = '0' ) and (y = '0'))  or (z = '1'))
+blah;  -- some useful statement  
+blah;  -- some useful statement  
+end if;
