@@ -24,7 +24,7 @@ end d_ff;
 architecture arc_d_ff of d_ff is 
 --internal signals
 begin
-	dff: process(S, R, CLK, Q)
+	dff: process(S, R, CLK, D)
 		begin
 			if (S = '0') then Q <= '1'; Q_bar <= '0';
 			elsif (R = '0') then Q <= '0'; Q_bar <= '1';
