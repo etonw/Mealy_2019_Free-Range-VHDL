@@ -1,11 +1,12 @@
---ECW 15.09.18
+--ECW 17.09.18
 --FREE RANGE VHDL, p.79
 --Model of a simple flip flop
 
--- EXAMPLE 17. Write the VHDL
--- code that describes a T flip flop shown on the right. Use a behavioral
--- model in your description. Consider the S input to be an active-low, asyn-
--- chronous input that sets the T flip flop outputs when asserted.
+-- EXERCISE 6. Provide a VHDL behavioral
+-- model of the T flip flop shown on the right.
+-- The S and R inputs are an active low asyn-
+-- chronous preset and clear. Assume both the
+-- S and R inputs will never be asserted simultaneously.
 
 ----------------------------------------------------------------
 -- RET T FLIP-FLOP MODEL WITH ACTIVE-LOW ASYNCHRONOUS SET INPUT. 
