@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="C:/Users/127464/Documents/GitHub/VHDL/Hieu_two_bit_comparator/Hieu_two_bit_comparator.xpr">
+<Project Version="7" Minor="20" Path="D:/OneDrive - USN/2_SCH4300/1_VHDL/VHDL Projects/Free-Range/Hieu_two_bit_comparator/Hieu_two_bit_comparator.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7904fde8e9694536bc7c02a3bdbeefd7"/>
@@ -21,6 +21,7 @@
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>

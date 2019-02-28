@@ -24,5 +24,6 @@ module one_bit_comparator(
     input a,
     input b,
     output z
+    
     );
 endmodule
